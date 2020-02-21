@@ -15,11 +15,11 @@ if(CMAKE_BUILD_TYPE MATCHES "Debug")
 endif()
 
 option(PISTACHE_BUILD_TESTS "build tests alongside the project" OFF)
-option(PISTACHE_ENABLE_NETWORK_TESTS "if tests are built, run ones needing network access" ON)
+option(PISTACHE_ENABLE_NETWORK_TESTS "if tests are built, run ones needing network access" OFF)
 option(PISTACHE_BUILD_EXAMPLES "build examples alongside the project" OFF)
 option(PISTACHE_BUILD_DOCS "build docs alongside the project" OFF)
 option(PISTACHE_INSTALL "add pistache as install target (recommended)" ON)
-option(PISTACHE_USE_SSL "add support for SSL server" OFF)
+option(PISTACHE_USE_SSL "add support for SSL server" ON)
 
 # require fat LTO objects in static library
 if(CMAKE_CXX_FLAGS MATCHES "-flto")
@@ -55,7 +55,7 @@ endif()
 # CMAKE Pin cxx compiler to CXX14 until update to CXX17
 include(CheckCXXCompilerFlag)
 CHECK_CXX_COMPILER_FLAG("-std=c++14" COMPILER_SUPPORTS_CXX14)
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)

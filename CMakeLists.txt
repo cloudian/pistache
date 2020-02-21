@@ -3,7 +3,7 @@ cmake_minimum_required (VERSION 3.9)
 set(CMAKE_BUILD_TYPE_INIT Release)
 
 # CMAKE Pin cxx compiler to CXX14 until update to CXX17
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -24,11 +24,11 @@ endif()
 
 option(BUILD_SHARED_LIBS "build shared library" ON)
 option(PISTACHE_BUILD_TESTS "build tests alongside the project" OFF)
-option(PISTACHE_ENABLE_NETWORK_TESTS "if tests are built, run ones needing network access" ON)
+option(PISTACHE_ENABLE_NETWORK_TESTS "if tests are built, run ones needing network access" OFF)
 option(PISTACHE_BUILD_EXAMPLES "build examples alongside the project" OFF)
 option(PISTACHE_BUILD_DOCS "build docs alongside the project" OFF)
 option(PISTACHE_INSTALL "add pistache as install target (recommended)" ON)
-option(PISTACHE_USE_SSL "add support for SSL server" OFF)
+option(PISTACHE_USE_SSL "add support for SSL server" ON)
 option(PISTACHE_PIC "Enable pistache PIC" ON)
 
 # require fat LTO objects in static library
